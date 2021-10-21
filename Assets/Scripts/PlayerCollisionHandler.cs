@@ -37,6 +37,10 @@ public class PlayerCollisionHandler : MonoBehaviour
                 }    
             }
         }
+        else if (collision.transform.TryGetComponent(out Enemy enemy))
+        {
+            _player.Die();
+        }
     }
 
     public void ResetCollision()

@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
 
     public Vector2 StartPosition => _startPosition;
     public event UnityAction<int> ScoreChanged;
+    public event UnityAction GameOver;
 
     private void Awake()
     {
@@ -23,6 +24,13 @@ public class Player : MonoBehaviour
     {
         _score++;
         ScoreChanged?.Invoke(_score);
+    }
+
+    public void Die()
+    {
+        Debug.Log("Game Over!");
+        Time.timeScale = 0;
+        GameOver?.Invoke();
     }
 
     public void ResetPlayer()
