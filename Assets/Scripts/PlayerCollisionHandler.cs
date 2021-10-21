@@ -22,6 +22,11 @@ public class PlayerCollisionHandler : MonoBehaviour
         {
             _mover.Flip();
         }
+        else if (collision.TryGetComponent(out Coin coin))
+        {
+            _player.IncreaseCoins();
+            coin.gameObject.SetActive(false);
+        }    
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

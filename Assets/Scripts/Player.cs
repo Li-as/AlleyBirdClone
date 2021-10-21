@@ -10,9 +10,11 @@ public class Player : MonoBehaviour
 
     private PlayerMover _mover;
     private int _score;
+    private int _coins;
 
     public Vector2 StartPosition => _startPosition;
     public event UnityAction<int> ScoreChanged;
+    public event UnityAction<int> CoinsChanged;
     public event UnityAction GameOver;
 
     private void Awake()
@@ -26,6 +28,12 @@ public class Player : MonoBehaviour
         ScoreChanged?.Invoke(_score);
     }
 
+    public void IncreaseCoins()
+    {
+        _coins++;
+        CoinsChanged?.Invoke(_coins);
+    }
+
     public void Die()
     {
         Debug.Log("Game Over!");
@@ -36,7 +44,9 @@ public class Player : MonoBehaviour
     public void ResetPlayer()
     {
         _score = 0;
+        _coins = 0;
         ScoreChanged?.Invoke(_score);
+        CoinsChanged?.Invoke(_coins);
         _mover.ResetState();
     }
 }
