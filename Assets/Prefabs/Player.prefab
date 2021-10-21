@@ -146,6 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc4fcd1aa96032b4286b523d2dbe2bdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _startPosition: {x: 0, y: -2}
 --- !u!114 &8515091830234825108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,6 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3288116d7c7d4b84ba3d6f26e788b622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _startPosition: {x: 0, y: 0}
   _speed: 180
   _jumpForce: 8.5
   _maxJumps: 2

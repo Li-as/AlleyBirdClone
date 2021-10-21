@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMover : MonoBehaviour
 {
+    [SerializeField] private Vector2 _startPosition;
     [SerializeField] private float _speed;
     [SerializeField] private float _jumpForce;
     [SerializeField] private int _maxJumps;
@@ -60,5 +61,12 @@ public class PlayerMover : MonoBehaviour
     {
         transform.Rotate(new Vector3(0, 180, 0));
         _faceDirection *= -1;
+    }
+
+    public void ResetState()
+    {
+        transform.position = _startPosition;
+        transform.rotation = Quaternion.identity;
+        _rigidbody.velocity = Vector2.zero;
     }
 }
