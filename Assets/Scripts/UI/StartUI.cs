@@ -10,6 +10,7 @@ public class StartUI : MonoBehaviour
     [SerializeField] private string _disappearAnimationTrigger;
     [SerializeField] private LevelStarter _levelStarter;
     [SerializeField] private float _disappearDuration;
+    [SerializeField] private LevelUI _levelUI;
 
     private Animator _animator;
 
@@ -39,6 +40,7 @@ public class StartUI : MonoBehaviour
     private IEnumerator WaitForEndOfDisappear(float duration)
     {
         yield return new WaitForSeconds(duration);
+        _levelUI.Appear();
         StartUIDisappeard?.Invoke();
     }
 }

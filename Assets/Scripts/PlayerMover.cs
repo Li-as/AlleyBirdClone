@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Rigidbody2D), typeof(Player))]
 public class PlayerMover : MonoBehaviour
 {
     [SerializeField] private Vector2 _startPosition;
@@ -15,23 +15,27 @@ public class PlayerMover : MonoBehaviour
     private Vector2 _faceDirection;
     private int _currentJumps;
     private bool _isCanMove;
+    private Player _player;
 
     public Vector3 StartPosition => _startPosition;
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
+        _player = GetComponent<Player>();
         _faceDirection = Vector2.right;
     }
 
     private void OnEnable()
     {
         _startUI.StartUIDisappeard += OnStartUIDisappeard;
+        _player.GameOver += OnGameOver;
     }
 
     private void OnDisable()
     {
         _startUI.StartUIDisappeard -= OnStartUIDisappeard;
+        _player.GameOver -= OnGameOver;
     }
 
     private void Update()
@@ -84,10 +88,18 @@ public class PlayerMover : MonoBehaviour
         transform.position = _startPosition;
         transform.rotation = Quaternion.identity;
         _rigidbody.velocity = Vector2.zero;
+        _faceDirection = Vector2.right;
+        _isCanMove = true;
     }
 
     private void OnStartUIDisappeard()
     {
         _isCanMove = true;
+    }
+
+    private void OnGameOver()
+    {
+        _rigidbody.velocity = Vector2.zero;
+        _isCanMove = false;
     }
 }

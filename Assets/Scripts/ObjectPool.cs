@@ -7,6 +7,7 @@ public class ObjectPool : MonoBehaviour
 {
     [SerializeField] private Transform _container;
     [SerializeField] private int _capacity;
+    [SerializeField] private float _disableOffsetY;
 
     private List<GameObject> _pool = new List<GameObject>();
 
@@ -26,7 +27,22 @@ public class ObjectPool : MonoBehaviour
         return result != null;
     }    
 
-    public void ResetPool()
+    protected void DisableObjectOutsideScreen()
+    {
+        foreach (GameObject item in _pool)
+        {
+            if (item.activeSelf == true)
+            {
+                Vector3 point = Camera.main.WorldToViewportPoint(item.transform.position);
+                if (point.y < _disableOffsetY)
+                {
+                    item.SetActive(false);
+                }
+            }
+        }
+    }    
+
+    public virtual void ResetPool()
     {
         foreach (GameObject item in _pool)
         {

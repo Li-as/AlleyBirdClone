@@ -45,5 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _container: {fileID: 0}
   _capacity: 8
+  _disableOffsetY: -1
   _template: {fileID: 3386465182102427645, guid: d8cc0b5d5709ba64aaa4e7d1e0ab3592, type: 3}
   _spawnChance: 0.6
+  _levelRestarter: {fileID: 0}

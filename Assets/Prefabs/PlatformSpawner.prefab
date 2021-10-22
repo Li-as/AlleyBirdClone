@@ -45,6 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _container: {fileID: 0}
   _capacity: 10
+  _disableOffsetY: -1
   _template: {fileID: 8553874843831808434, guid: 88f205af0fd8c5a4f860345a2a443b21, type: 3}
   _secondsBetweenSpawn: 0.65
   _distanceBetweenPlatforms: 2.5
@@ -54,3 +55,4 @@ MonoBehaviour:
   _withoutObjectsSpawnChance: 0.3
   _platformHeight: 1.4
   _onPlatformObjectSpawner: {fileID: 0}
+  _levelRestarter: {fileID: 0}

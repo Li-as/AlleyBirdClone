@@ -31,7 +31,11 @@ public class PlayerCollisionHandler : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.TryGetComponent(out Platform platform))
+        if (collision.transform.TryGetComponent(out Enemy enemy))
+        {
+            _player.Die();
+        }
+        else if (collision.transform.TryGetComponent(out Platform platform))
         {
             if (collision.contacts[0].normal.y > 0)
             {
@@ -41,10 +45,6 @@ public class PlayerCollisionHandler : MonoBehaviour
                     _lastCollidedPlatformPosition = platform.transform.position;
                 }    
             }
-        }
-        else if (collision.transform.TryGetComponent(out Enemy enemy))
-        {
-            _player.Die();
         }
     }
 

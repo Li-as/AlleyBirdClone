@@ -8,13 +8,19 @@ public class LevelStarter : MonoBehaviour
 {
     public event UnityAction LevelStarted;
 
+    private bool _isLevelCanBeStarted = true;
+
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (_isLevelCanBeStarted)
         {
-            if (EventSystem.current.IsPointerOverGameObject() == false)
+            if (Input.GetMouseButtonDown(0))
             {
-                LevelStarted?.Invoke();
+                if (EventSystem.current.IsPointerOverGameObject() == false)
+                {
+                    LevelStarted?.Invoke();
+                    _isLevelCanBeStarted = false;
+                }
             }
         }
     }

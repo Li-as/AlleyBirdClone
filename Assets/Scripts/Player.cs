@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(PlayerMover))]
+[RequireComponent(typeof(PlayerMover), typeof(PlayerCollisionHandler))]
 public class Player : MonoBehaviour
 {
     private PlayerMover _mover;
+    private PlayerCollisionHandler _collisionHandler;
     private int _score;
     private int _coins;
 
@@ -17,6 +18,7 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         _mover = GetComponent<PlayerMover>();
+        _collisionHandler = GetComponent<PlayerCollisionHandler>();
     }
 
     public void IncreaseScore()
@@ -33,8 +35,6 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
-        Debug.Log("Game Over!");
-        Time.timeScale = 0;
         GameOver?.Invoke();
     }
 
@@ -45,5 +45,6 @@ public class Player : MonoBehaviour
         ScoreChanged?.Invoke(_score);
         CoinsChanged?.Invoke(_coins);
         _mover.ResetState();
+        _collisionHandler.ResetCollision();
     }
 }
