@@ -14,9 +14,9 @@ public class LevelStarter : MonoBehaviour
     {
         if (_isLevelCanBeStarted)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
             {
-                if (EventSystem.current.IsPointerOverGameObject() == false)
+                if (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId) == false)
                 {
                     LevelStarted?.Invoke();
                     _isLevelCanBeStarted = false;

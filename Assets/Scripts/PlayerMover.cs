@@ -42,7 +42,7 @@ public class PlayerMover : MonoBehaviour
     {
         if (_isCanMove)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
             {
                 if (_currentJumps >= _maxJumps)
                 {
