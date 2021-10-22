@@ -22,8 +22,8 @@ public class LevelUI : MonoBehaviour
     public void Appear()
     {
         gameObject.SetActive(true);
-        _scoreDisplay.gameObject.SetActive(true);
-        _coinsDisplay.gameObject.SetActive(true);
+        _scoreDisplay.Appear();
+        _coinsDisplay.Appear();
     }
 
     private void OnGameOver()

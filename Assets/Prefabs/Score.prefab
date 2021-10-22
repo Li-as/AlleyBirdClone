@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7037922555542648783}
   - component: {fileID: 7037922555542648781}
   - component: {fileID: 7037922555542648780}
+  - component: {fileID: 7179377837586720997}
   - component: {fileID: 7037922555542648778}
   m_Layer: 5
   m_Name: Score
@@ -80,6 +81,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 2
+--- !u!225 &7179377837586720997
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7037922555542648782}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!114 &7037922555542648778
 MonoBehaviour:
   m_ObjectHideFlags: 0

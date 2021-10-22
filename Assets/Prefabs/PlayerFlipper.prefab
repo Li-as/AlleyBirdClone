@@ -70,3 +70,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 851b3ef5a36c6d8458f71393c8e04f9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _screenSide: 0
+  _fromEdgeOffsetX: 0.15

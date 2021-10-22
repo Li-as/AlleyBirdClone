@@ -145,6 +145,7 @@ GameObject:
   - component: {fileID: 5389960541243784742}
   - component: {fileID: 5389960541243784740}
   - component: {fileID: 5389960541243784741}
+  - component: {fileID: 7634705066765308653}
   - component: {fileID: 528437680865244251}
   m_Layer: 5
   m_Name: Coins
@@ -214,6 +215,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 2
+--- !u!225 &7634705066765308653
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5389960541243784743}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!114 &528437680865244251
 MonoBehaviour:
   m_ObjectHideFlags: 0

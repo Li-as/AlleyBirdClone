@@ -89,6 +89,7 @@ public class PlayerMover : MonoBehaviour
         transform.rotation = Quaternion.identity;
         _rigidbody.velocity = Vector2.zero;
         _faceDirection = Vector2.right;
+        _rigidbody.isKinematic = false;
         _isCanMove = true;
     }
 
@@ -100,6 +101,7 @@ public class PlayerMover : MonoBehaviour
     private void OnGameOver()
     {
         _rigidbody.velocity = Vector2.zero;
+        _rigidbody.isKinematic = true;
         _isCanMove = false;
     }
 }
