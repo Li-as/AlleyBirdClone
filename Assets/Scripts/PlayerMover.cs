@@ -14,14 +14,12 @@ public class PlayerMover : MonoBehaviour
     private Vector2 _faceDirection;
     private int _currentJumps;
 
+    public Vector3 StartPosition => _startPosition;
+
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
-        
-        if (transform.rotation == Quaternion.identity)
-        {
-            _faceDirection = Vector2.right;
-        }
+        _faceDirection = Vector2.right;
     }
 
     private void Update()

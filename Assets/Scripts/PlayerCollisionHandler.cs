@@ -13,7 +13,7 @@ public class PlayerCollisionHandler : MonoBehaviour
     {
         _player = GetComponent<Player>();
         _mover = GetComponent<PlayerMover>();
-        _lastCollidedPlatformPosition = _player.StartPosition;
+        _lastCollidedPlatformPosition = _mover.StartPosition;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -50,6 +50,6 @@ public class PlayerCollisionHandler : MonoBehaviour
 
     public void ResetCollision()
     {
-        _lastCollidedPlatformPosition = _player.StartPosition;
+        _lastCollidedPlatformPosition = _mover.StartPosition;
     }
 }

@@ -330,6 +330,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coins
       objectReference: {fileID: 0}
+    - target: {fileID: 5389960541544873366, guid: a320c89b3258c1d428d85308e08d0a14, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5389960541544873366, guid: a320c89b3258c1d428d85308e08d0a14, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5389960541544873366, guid: a320c89b3258c1d428d85308e08d0a14, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5389960541544873366, guid: a320c89b3258c1d428d85308e08d0a14, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5389960541812306694, guid: a320c89b3258c1d428d85308e08d0a14, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5389960541812306694, guid: a320c89b3258c1d428d85308e08d0a14, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5389960541812306694, guid: a320c89b3258c1d428d85308e08d0a14, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5389960541812306694, guid: a320c89b3258c1d428d85308e08d0a14, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a320c89b3258c1d428d85308e08d0a14, type: 3}
 --- !u!224 &7941024296232534590 stripped

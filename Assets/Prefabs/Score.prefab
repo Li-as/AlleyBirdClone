@@ -92,6 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d155529cd5a58549bca3de710e4607f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _player: {fileID: 0}
   _score: {fileID: 7037922556115499756}
   _best: {fileID: 7037922555843736700}
   _bestStartString: 'Best: '
@@ -325,7 +326,7 @@ MonoBehaviour:
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 18
+  m_fontSizeMin: 40
   m_fontSizeMax: 150
   m_fontStyle: 0
   m_HorizontalAlignment: 2

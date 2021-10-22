@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &390311965437977924
+--- !u!1 &2009383102613456365
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 390311965437977926}
-  - component: {fileID: 390311965437977925}
+  - component: {fileID: 5146817635141126946}
+  - component: {fileID: 5708559548362643790}
   m_Layer: 0
-  m_Name: PlatformSpawner
+  m_Name: OnPlatfromObjectSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &390311965437977926
+--- !u!4 &5146817635141126946
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 390311965437977924}
+  m_GameObject: {fileID: 2009383102613456365}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,26 +31,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &390311965437977925
+--- !u!114 &5708559548362643790
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 390311965437977924}
+  m_GameObject: {fileID: 2009383102613456365}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47219093e73738e42b5fe40cdd5abd71, type: 3}
+  m_Script: {fileID: 11500000, guid: 18373ae7e253cc843a661b5852b2e1e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _container: {fileID: 0}
-  _capacity: 10
-  _template: {fileID: 8553874843831808434, guid: 88f205af0fd8c5a4f860345a2a443b21, type: 3}
-  _secondsBetweenSpawn: 0.65
-  _distanceBetweenPlatforms: 2.5
-  _startSpawnPosition: {x: 0, y: -2.75}
-  _startSpawnAmount: 6
-  _withoutObjectsAmount: 2
-  _withoutObjectsSpawnChance: 0.3
-  _platformHeight: 1.4
-  _onPlatformObjectSpawner: {fileID: 0}
+  _platformSpawner: {fileID: 0}
+  _enemySpawner: {fileID: 0}
+  _coinSpawner: {fileID: 0}
+  _spawnOffsetFromScreenEdges: 0.8
+  _maxDistanceBetweenObjects: 0.9

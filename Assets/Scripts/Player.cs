@@ -6,13 +6,10 @@ using UnityEngine.Events;
 [RequireComponent(typeof(PlayerMover))]
 public class Player : MonoBehaviour
 {
-    [SerializeField] private Vector2 _startPosition;
-
     private PlayerMover _mover;
     private int _score;
     private int _coins;
 
-    public Vector2 StartPosition => _startPosition;
     public event UnityAction<int> ScoreChanged;
     public event UnityAction<int> CoinsChanged;
     public event UnityAction GameOver;
