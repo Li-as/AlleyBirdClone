@@ -9,10 +9,12 @@ public class PlayerMover : MonoBehaviour
     [SerializeField] private float _speed;
     [SerializeField] private float _jumpForce;
     [SerializeField] private int _maxJumps;
+    [SerializeField] private StartUI _startUI;
 
     private Rigidbody2D _rigidbody;
     private Vector2 _faceDirection;
     private int _currentJumps;
+    private bool _isCanMove;
 
     public Vector3 StartPosition => _startPosition;
 
@@ -22,26 +24,42 @@ public class PlayerMover : MonoBehaviour
         _faceDirection = Vector2.right;
     }
 
+    private void OnEnable()
+    {
+        _startUI.StartUIDisappeard += OnStartUIDisappeard;
+    }
+
+    private void OnDisable()
+    {
+        _startUI.StartUIDisappeard -= OnStartUIDisappeard;
+    }
+
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (_isCanMove)
         {
-            if (_currentJumps >= _maxJumps)
+            if (Input.GetMouseButtonDown(0))
             {
-                return;
-            }
+                if (_currentJumps >= _maxJumps)
+                {
+                    return;
+                }
 
-            _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, 0);
-            _rigidbody.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
-            _currentJumps++;
+                _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, 0);
+                _rigidbody.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
+                _currentJumps++;
+            }
         }
     }
 
     private void FixedUpdate()
     {
-        float velocityX = _speed * _faceDirection.x * Time.fixedDeltaTime;
-        float velocityY = _rigidbody.velocity.y;
-        _rigidbody.velocity = new Vector2(velocityX, velocityY);
+        if (_isCanMove)
+        {
+            float velocityX = _speed * _faceDirection.x * Time.fixedDeltaTime;
+            float velocityY = _rigidbody.velocity.y;
+            _rigidbody.velocity = new Vector2(velocityX, velocityY);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -66,5 +84,10 @@ public class PlayerMover : MonoBehaviour
         transform.position = _startPosition;
         transform.rotation = Quaternion.identity;
         _rigidbody.velocity = Vector2.zero;
+    }
+
+    private void OnStartUIDisappeard()
+    {
+        _isCanMove = true;
     }
 }
